@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import {HashRouter,Route,Routes} from 'react-router-dom'
 import styles from './App.module.css'
 import HomePage from './pages/home/HomePage'
 import SignInPage from './pages/signin/SignInPage'
@@ -29,7 +29,7 @@ function App() {
   }, [dispatch, jwt]);
   return (
     <div className={styles.App}>
-      <BrowserRouter>
+      <HashRouter basename='/'>
         <Routes>
           <Route path = '/' element={<HomePage/>}/>
           <Route path = '/signin' element={<SignInPage/>}/>
@@ -53,9 +53,9 @@ function App() {
             </PrivateRoute>
           }
           />
-          <Route path="*" element={<h1>404 not found, page doesnt exist</h1>} />
+          <Route path="*" element={<h1>404 not found, page does not exist</h1>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
