@@ -21,26 +21,38 @@ type MatchParams = {
 
 export const SearchPage: React.FC = () => {
   const { keywords } = useParams<MatchParams>();
-  
+
   const loading = useSelector((state) => state.productSearch.loading);
-  const error = useSelector((s) => s.productSearch.error);
-  const pagination = useSelector((s) => s.productSearch.pagination);
-  const productList = useSelector((s) => s.productSearch.data);
+  const error = useSelector((state) => state.productSearch.error);
+  const pagination = useSelector((state) => state.productSearch.pagination);
+  const productList = useSelector((state) => state.productSearch.data);
 
   const dispatch = useAppDispatch();
   const location = useLocation();
 
-  useEffect(()=>{
-    if(keywords) {
-      dispatch(searchProduct({nextPage:1, pageSize: 10, keywords}))
+  useEffect(() => {
+    if (keywords) {
+      dispatch(
+        searchProduct({
+          nextPage: 1,
+          pageSize: 10,
+          keywords,
+        })
+      );
     }
-  },[location])
+  }, [dispatch, keywords, location]);
 
-  const onPageChange = (nextPage, pageSize) =>{
-    if(keywords) {
-      dispatch(searchProduct({nextPage, pageSize, keywords}))
+  const onPageChange = (nextPage, pageSize) => {
+    if (keywords) {
+      dispatch(
+        searchProduct({
+          nextPage,
+          pageSize,
+          keywords,
+        })
+      );
     }
-  }
+  };
 
   if (loading) {
     return (
@@ -56,14 +68,16 @@ export const SearchPage: React.FC = () => {
       />
     );
   }
+
   if (error) {
-    return <div>网站出错：{error}</div>;
+    return <div>网站出错:{error}</div>;
   }
 
   return (
     <MainLayout>
       {/* 分类过滤器 */}
       <div className={styles["product-list-container"]}>
+        123123
         <FilterArea />
       </div>
       {/* 产品列表 */}

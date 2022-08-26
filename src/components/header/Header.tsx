@@ -9,7 +9,7 @@ import {languageSlice} from '../../redux/language/slice'
 import { useDispatch } from 'react-redux';
 //使用useDispatch钩子获取到dispatch方法，并且根据需要dispatch actions
 import { useTranslation } from 'react-i18next';
-import { useSelector } from "../../redux/hooks";
+import { useSelector,useAppDispatch } from "../../redux/hooks";
 import jwt_decode,{JwtPayload as DefaultJwtPayload} from 'jwt-decode'
 import {userSlice} from '../../redux/user/slice'
 
@@ -27,7 +27,7 @@ export const Header:React.FC = () => {
   //使用useSelector钩子从store中读数据
 //为什么这里是state.language.language
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { t } = useTranslation();
   const jwt = useSelector(s=>s.user.token)
   const [username, setUsername] = useState('');
