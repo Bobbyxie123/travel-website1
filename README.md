@@ -8,14 +8,14 @@ this is the home page.
 
 
 there are the sign in and register page. 
-![image](2.png)
+![image](https://github.com/Bobbyxie123/travel-website1/blob/main/IMG/2.png)
 
 there are detail pages 
-![image](3.png)
+![image](https://github.com/Bobbyxie123/travel-website1/blob/main/IMG/3.png)
 
 
 and the shopping carts
-![image](4.jpg)
+![image](https://github.com/Bobbyxie123/travel-website1/blob/main/IMG/4.jpg)
 
 
 
