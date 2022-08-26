@@ -3,7 +3,7 @@ Used technologies such as Redux toolkit, Redux thunk, Redux persist, JWT, and MV
 
 
 this is the home page. 
-![image](1.png)
+![image](https://github.com/Bobbyxie123/travel-website1/blob/main/IMG/1.png)
 
 
 
